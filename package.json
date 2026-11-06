@@ -1,0 +1,21 @@
+{
+  "name": "harikrishnan-developer-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Harikrishnan S - Cybersecurity, Embedded IoT & Software Engineer Portfolio",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^1.70.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}

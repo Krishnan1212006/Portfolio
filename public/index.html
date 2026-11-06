@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harikrishnan S | Cybersecurity & Software Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Harikrishnan S - Computer Science Engineer specializing in Cybersecurity, AI threat detection, embedded IoT systems, and secure software.">
+  <link rel="icon" type="image/jpeg" href="./assets/images/favicon.jpg">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Harikrishnan S | Cybersecurity & Software Engineer Portfolio">
+  <meta property="og:description" content="Interactive developer portfolio showcasing projects in AI threat detection, DoD 5220.22-M disk sanitization, satellite telemetry, and embedded IoT systems.">
+  <meta property="og:image" content="./assets/images/hero-banner.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: '#00E5FF',
+              teal: '#00BFA5',
+              purple: '#7C4DFF',
+              dark: '#0A0E17',
+              card: '#111827',
+              border: 'rgba(255, 255, 255, 0.08)'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #0A0E17;
+      color: #F3F4F6;
+      font-family: 'Inter', sans-serif;
+    }
+    .mesh-gradient {
+      background: radial-gradient(circle at 15% 15%, rgba(124, 77, 255, 0.15) 0%, transparent 40%),
+                  radial-gradient(circle at 85% 25%, rgba(0, 229, 255, 0.15) 0%, transparent 40%),
+                  radial-gradient(circle at 50% 80%, rgba(0, 191, 165, 0.12) 0%, transparent 50%),
+                  #0A0E17;
+    }
+    .glass-nav {
+      background: rgba(10, 14, 23, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.65);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 229, 255, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -10px rgba(0, 229, 255, 0.15);
+    }
+    .glow-cyan {
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+    }
+    .glow-teal {
+      box-shadow: 0 0 20px rgba(0, 191, 165, 0.3);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0E17;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1F2937;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #374151;
+    }
+  </style>
+</head>
+<body class="mesh-gradient min-h-screen text-slate-100 antialiased selection:bg-cyan-500 selection:text-black">
+
+  <!-- ==================== STICKY WEBSITE NAVBAR ==================== -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo / Brand -->
+        <a href="#home" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 to-purple-600 flex items-center justify-center text-black font-extrabold text-xl shadow-lg group-hover:scale-105 transition-transform overflow-hidden">
+            <img src="./assets/images/avatar.jpg" alt="Harikrishnan S" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="hidden font-extrabold text-black">H</span>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="font-extrabold text-lg tracking-wider text-white group-hover:text-cyan-400 transition-colors">HARIKRISHNAN</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800 font-mono font-semibold">.DEV</span>
+            </div>
+            <p class="text-xs text-slate-400 font-medium">Cybersecurity & Embedded IoT</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 font-medium text-sm text-slate-300">
+          <a href="#about" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-slate-800/50 transition">About</a>
+          <a href="#projects" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-slate-800/50 transition">Projects</a>
+          <a href="#demos" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-slate-800/50 transition flex items-center gap-1.5 text-cyan-300">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+            </span>
+            Live Demos
+          </a>
+          <a href="#experience" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-slate-800/50 transition">Experience</a>
+          <a href="#skills" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-slate-800/50 transition">Skills</a>
+          <a href="#awards" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-slate-800/50 transition">Academics & Awards</a>
+          <a href="#contact" class="px-3 py-2 rounded-lg hover:text-cyan-400 hover:bg-slate-800/50 transition">Contact</a>
+        </nav>
+
+        <!-- Right Action CTAs -->
+        <div class="hidden sm:flex items-center space-x-3">
+          <a href="./assets/documents/HariKrishnan_Resume.pdf" target="_blank" download="HariKrishnan_Resume.pdf"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-cyan-400/50 transition shadow-sm">
+            <i class="fa-solid fa-file-pdf text-cyan-400"></i>
+            <span>Resume (PDF)</span>
+          </a>
+          <a href="#contact"
+             class="inline-flex items-center gap-2 px-5 py-2 rounded-xl text-sm font-bold bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-950 hover:brightness-110 transition shadow-lg glow-cyan">
+            <span>Get in Touch</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="flex md:hidden">
+          <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800 bg-slate-900/95 px-4 pt-3 pb-6 space-y-2">
+      <a href="#about" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">About</a>
+      <a href="#projects" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">Projects (6)</a>
+      <a href="#demos" class="block px-3 py-2 rounded-lg text-cyan-300 hover:bg-slate-800">Live Demos</a>
+      <a href="#experience" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">Experience</a>
+      <a href="#skills" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">Skills & Tools</a>
+      <a href="#awards" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">Academics & Awards</a>
+      <a href="#contact" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">Contact</a>
+      <div class="pt-3 flex flex-col gap-2">
+        <a href="./assets/documents/HariKrishnan_Resume.pdf" target="_blank" download="HariKrishnan_Resume.pdf" class="w-full text-center py-2.5 rounded-lg bg-slate-800 text-slate-200 text-sm font-semibold border border-slate-700">
+          <i class="fa-solid fa-download mr-2 text-cyan-400"></i> Download Resume (PDF)
+        </a>
+        <a href="#contact" class="w-full text-center py-2.5 rounded-lg bg-cyan-400 text-black text-sm font-bold">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="home" class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Pill Status -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/80 border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Available for Cybersecurity, IoT & Software Engineering roles</span>
+        <span class="text-slate-500">|</span>
+        <span class="text-slate-400">Tirupur, India</span>
+      </div>
+
+      <!-- Main Grid Hero -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Building Resilient <br>
+            <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400 bg-clip-text text-transparent">
+              Cyber Defense & IoT
+            </span>
+            Architecture.
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal max-w-2xl">
+            Hi, I'm <strong class="text-white font-semibold">Harikrishnan S</strong>. Computer Science & Engineering graduate (CGPA 7.27) at Akshaya College of Engineering and Technology, with demonstrated expertise in <span class="text-cyan-300 font-medium">intrusion telemetry</span>, <span class="text-teal-300 font-medium">DoD 5220.22-M disk sanitization</span>, and <span class="text-purple-300 font-medium">satellite ground link telemetry</span>.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#projects" class="px-6 py-3.5 rounded-xl font-bold bg-gradient-to-r from-cyan-400 to-teal-400 text-black hover:brightness-110 transition shadow-lg glow-cyan flex items-center gap-2">
+              <span>Explore 6 Projects</span>
+              <i class="fa-solid fa-arrow-down text-sm"></i>
+            </a>
+
+            <a href="#demos" class="px-6 py-3.5 rounded-xl font-semibold bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 hover:border-cyan-400/50 transition flex items-center gap-2">
+              <i class="fa-solid fa-terminal text-cyan-400"></i>
+              <span>Interactive Demos</span>
+            </a>
+
+            <a href="./assets/documents/HariKrishnan_Resume.pdf" target="_blank" download="HariKrishnan_Resume.pdf" class="px-6 py-3.5 rounded-xl font-semibold bg-transparent hover:bg-slate-800/40 text-slate-300 border border-slate-700/80 hover:text-white transition flex items-center gap-2">
+              <i class="fa-solid fa-cloud-arrow-down text-teal-400"></i>
+              <span>Download CV</span>
+            </a>
+          </div>
+
+          <!-- Quick Contacts & Social Bar -->
+          <div class="pt-6 flex flex-wrap items-center gap-6 text-sm text-slate-400 border-t border-slate-800/80">
+            <a href="mailto:harikrishnansenthil79@gmail.com" class="hover:text-cyan-400 transition flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-cyan-400"></i>
+              <span>harikrishnansenthil79@gmail.com</span>
+            </a>
+            <a href="tel:+917639294309" class="hover:text-cyan-400 transition flex items-center gap-2 font-mono">
+              <i class="fa-solid fa-phone text-teal-400"></i>
+              <span>+91 76392 94309</span>
+            </a>
+            <a href="https://github.com/Krishnan1212006" target="_blank" rel="noopener" class="hover:text-cyan-400 transition flex items-center gap-2 font-mono">
+              <i class="fa-brands fa-github text-slate-300"></i>
+              <span>Krishnan1212006</span>
+            </a>
+            <a href="https://linkedin.com/in/hari-krishnan-031b46284" target="_blank" rel="noopener" class="hover:text-cyan-400 transition flex items-center gap-2">
+              <i class="fa-brands fa-linkedin text-cyan-400"></i>
+              <span>LinkedIn</span>
+            </a>
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-purple-400"></i>
+              <span>Tirupur, Tamil Nadu</span>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right Card / Metrics -->
+        <div class="lg:col-span-5" id="about">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-cyan-500/10 rounded-full blur-2xl"></div>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-400 to-purple-600 p-0.5 shadow-md overflow-hidden relative group">
+                  <img src="./assets/images/avatar.jpg" alt="Harikrishnan S" class="w-full h-full object-cover rounded-[14px] transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="w-full h-full bg-slate-900 rounded-[14px] hidden items-center justify-center font-bold text-2xl text-cyan-300">
+                    HS
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">Harikrishnan S</h3>
+                  <p class="text-sm text-cyan-400 font-mono">B.E. Computer Science</p>
+                  <p class="text-xs text-slate-400">CGPA 7.27 • Akshaya College of Engg & Tech</p>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                Verified
+              </span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50">
+                <div class="text-2xl font-black text-cyan-400">6</div>
+                <div class="text-xs text-slate-400 font-medium mt-1">Featured Projects</div>
+                <div class="text-[11px] text-slate-500">AI, IoT, Security, Design</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50">
+                <div class="text-2xl font-black text-teal-400">1st Prize</div>
+                <div class="text-xs text-slate-400 font-medium mt-1">Demo Day & Tech Day</div>
+                <div class="text-[11px] text-slate-500">Autonomous Rover & Paper Expo</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50">
+                <div class="text-2xl font-black text-purple-400">Hack up Tech</div>
+                <div class="text-xs text-slate-400 font-medium mt-1">Security Intern</div>
+                <div class="text-[11px] text-slate-500">Wireshark, Nmap, Pentest</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-700/50">
+                <div class="text-2xl font-black text-amber-400">NIST / DoD</div>
+                <div class="text-xs text-slate-400 font-medium mt-1">Compliant Tooling</div>
+                <div class="text-[11px] text-slate-500">Cryptographic Wiping</div>
+              </div>
+            </div>
+
+            <!-- Objective quote -->
+            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-xs sm:text-sm text-slate-300 leading-relaxed italic border-l-4 border-l-cyan-400">
+              "Motivated Computer Science graduate with a strong foundation in cybersecurity, programming, and hardware-software integration. Passionate about transforming innovative ideas into practical, scalable solutions."
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== RESPONSIVE PROJECT GRID SECTION ==================== -->
+  <section id="projects" class="py-16 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-layer-group"></i> Portfolio Showcase
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Featured Projects & Engineering Work
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-1 max-w-2xl">
+            Real-world systems spanning automated cyber threat intelligence, certified storage sanitization, embedded space telemetry, and IoT hardware.
+          </p>
+        </div>
+
+        <!-- Real-time Search Box -->
+        <div class="w-full md:w-80 relative">
+          <input type="text" id="projectSearch" placeholder="Filter by Python, NIST, IoT, AI..."
+                 class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 pl-10 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition">
+          <i class="fa-solid fa-search absolute left-3.5 top-3.5 text-slate-500 text-sm"></i>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap items-center gap-2 mb-10 pb-2 border-b border-slate-800" id="filterBar">
+        <button class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-cyan-400 text-black shadow-sm" data-category="all">
+          All Projects (6)
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition text-slate-400 hover:text-white hover:bg-slate-800" data-category="cybersecurity">
+          Cybersecurity & AI (2)
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition text-slate-400 hover:text-white hover:bg-slate-800" data-category="iot">
+          Hardware & IoT (3)
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition text-slate-400 hover:text-white hover:bg-slate-800" data-category="design">
+          Design & UI/UX (1)
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition text-slate-400 hover:text-white hover:bg-slate-800" data-category="demos">
+          Interactive Demos (4)
+        </button>
+      </div>
+
+      <!-- RESPONSIVE GRID (1 col mobile, 2 cols tablet, 3 cols desktop) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+        
+        <!-- Project 1: CyberResilience AI -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between"
+             data-category="cybersecurity demos" data-search="cyberresilience ai python pytorch mitre att&ck network intrusion anomaly telemetry scapy lstm gru">
+          <div>
+            <div class="h-44 relative bg-gradient-to-tr from-slate-950 via-slate-900 to-indigo-950 p-5 flex flex-col justify-between border-b border-slate-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-purple-500/20 rounded-full blur-xl"></div>
+              <div class="flex items-center justify-between z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold uppercase bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                  Cybersecurity & AI
+                </span>
+                <span class="text-xs font-mono text-slate-400">Active</span>
+              </div>
+              <div class="z-10 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center text-purple-300 text-xl">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-purple-300 font-mono font-semibold">THREAT INTELLIGENCE</div>
+                  <div class="text-lg font-bold text-white leading-tight">CyberResilience AI</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-4">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <i class="fa-solid fa-bolt text-[10px]"></i>
+                <span>LSTM/GRU Pipeline & MITRE ATT&CK Mapping</span>
+              </div>
+
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Autonomous threat detection platform analyzing raw network packet telemetry, classifying attack progression with temporal neural networks, and isolating compromised nodes in real time.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Python</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">PyTorch</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">MITRE ATT&CK</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Scapy</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-2 border-t border-slate-800/60 mt-4">
+            <button onclick="openDemo('cyber')" class="flex-1 py-2 px-3 rounded-xl bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 border border-purple-500/40 text-xs font-bold transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-play text-[10px]"></i> Live Sim
+            </button>
+            <button onclick="openDetails('cyber')" class="flex-1 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center justify-center gap-1.5">
+              <span>Architecture</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: Datanix -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between"
+             data-category="cybersecurity demos" data-search="datanix dod 5220.22-m nist sp 800-88 disk wipe storage sanitization python c++ pyqt forensics">
+          <div>
+            <div class="h-44 relative bg-gradient-to-tr from-slate-950 via-slate-900 to-cyan-950 p-5 flex flex-col justify-between border-b border-slate-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-cyan-500/20 rounded-full blur-xl"></div>
+              <div class="flex items-center justify-between z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                  Data Sanitization
+                </span>
+                <span class="text-xs font-mono text-slate-400">NIST Aligned</span>
+              </div>
+              <div class="z-10 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 text-xl">
+                  <i class="fa-solid fa-hard-drive"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-cyan-300 font-mono font-semibold">CERTIFIED SECURE WIPE</div>
+                  <div class="text-lg font-bold text-white leading-tight">Datanix</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-4">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
+                <i class="fa-solid fa-shield-virus text-[10px]"></i>
+                <span>DoD 5220.22-M (3-Pass) & NIST SP 800-88 Standard</span>
+              </div>
+
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Industrial data sanitization software overwriting magnetic & solid-state storage with cryptographic pseudorandom noise and zero-fill verification to prevent hardware data recovery.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Python</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">C++</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">NIST SP 800-88</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Kali Linux</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-2 border-t border-slate-800/60 mt-4">
+            <button onclick="openDemo('datanix')" class="flex-1 py-2 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-bold transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-play text-[10px]"></i> Live Sim
+            </button>
+            <button onclick="openDetails('datanix')" class="flex-1 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center justify-center gap-1.5">
+              <span>Architecture</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3: SafeTrack SOS -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between"
+             data-category="iot demos" data-search="safetrack sos esp8266 esp32 neo-6m gps sim800l hardware embedded alert iot emergency">
+          <div>
+            <div class="h-44 relative bg-gradient-to-tr from-slate-950 via-slate-900 to-rose-950 p-5 flex flex-col justify-between border-b border-slate-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-rose-500/20 rounded-full blur-xl"></div>
+              <div class="flex items-center justify-between z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold uppercase bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                  Embedded IoT
+                </span>
+                <span class="text-xs font-mono text-slate-400">Winner</span>
+              </div>
+              <div class="z-10 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-rose-500/20 border border-rose-400/30 flex items-center justify-center text-rose-300 text-xl">
+                  <i class="fa-solid fa-tower-broadcast"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-rose-300 font-mono font-semibold">SMART SAFETY SYSTEM</div>
+                  <div class="text-lg font-bold text-white leading-tight">SafeTrack SOS</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-4">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-500/10 text-rose-300 border border-rose-500/20">
+                <i class="fa-solid fa-satellite text-[10px]"></i>
+                <span>Sub-3-Second Cellular GPS Geo-Alert Trigger</span>
+              </div>
+
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Emergency tracking device utilizing ESP32 microcontroller and NEO-6M GPS to transmit instant geolocations via cellular GSM SIM800L to a central dispatch dashboard.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">ESP32</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">NEO-6M GPS</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">SIM800L GSM</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Embedded C</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-2 border-t border-slate-800/60 mt-4">
+            <button onclick="openDemo('safetrack')" class="flex-1 py-2 px-3 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40 text-xs font-bold transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-play text-[10px]"></i> Live Sim
+            </button>
+            <button onclick="openDetails('safetrack')" class="flex-1 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center justify-center gap-1.5">
+              <span>Architecture</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4: SATLINK -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between"
+             data-category="iot demos" data-search="satlink satellite orbital telemetry ground station aes-256 lora rf c++ esp32 communications">
+          <div>
+            <div class="h-44 relative bg-gradient-to-tr from-slate-950 via-slate-900 to-sky-950 p-5 flex flex-col justify-between border-b border-slate-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-sky-500/20 rounded-full blur-xl"></div>
+              <div class="flex items-center justify-between z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold uppercase bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                  Aerospace & RF
+                </span>
+                <span class="text-xs font-mono text-slate-400">Prototype</span>
+              </div>
+              <div class="z-10 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/20 border border-sky-400/30 flex items-center justify-center text-sky-300 text-xl">
+                  <i class="fa-solid fa-satellite-dish"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-sky-300 font-mono font-semibold">SATELLITE TELEMETRY LINK</div>
+                  <div class="text-lg font-bold text-white leading-tight">SATLINK Ground Station</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-4">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-sky-500/10 text-sky-300 border border-sky-500/20">
+                <i class="fa-solid fa-lock text-[10px]"></i>
+                <span>AES-256 Encrypted Orbital Telemetry & Packet Decoding</span>
+              </div>
+
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Ground terminal transceiver decoding low-earth orbit satellite telemetry with automatic Doppler correction and cryptographic payload verification.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">ESP32-S3</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">LoRa RF</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">AES-256</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">C++</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-2 border-t border-slate-800/60 mt-4">
+            <button onclick="openDemo('satlink')" class="flex-1 py-2 px-3 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 text-xs font-bold transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-play text-[10px]"></i> Live Sim
+            </button>
+            <button onclick="openDetails('satlink')" class="flex-1 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center justify-center gap-1.5">
+              <span>Architecture</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5: Autonomous Obstacle Car -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between"
+             data-category="iot" data-search="autonomous obstacle car arduino ultrasonic sensor servo robotics embedded l298n 1st prize">
+          <div>
+            <div class="h-44 relative bg-gradient-to-tr from-slate-950 via-slate-900 to-amber-950 p-5 flex flex-col justify-between border-b border-slate-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-amber-500/20 rounded-full blur-xl"></div>
+              <div class="flex items-center justify-between z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  Robotics & Embedded
+                </span>
+                <span class="text-xs font-mono text-amber-300 font-bold">1st Prize Demo Day</span>
+              </div>
+              <div class="z-10 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-300 text-xl">
+                  <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-amber-300 font-mono font-semibold">AUTONOMOUS NAVIGATION</div>
+                  <div class="text-lg font-bold text-white leading-tight">Obstacle Avoiding Rover</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-4">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/20">
+                <i class="fa-solid fa-route text-[10px]"></i>
+                <span>Real-Time Ultrasonic Path Planning & Servo Radar</span>
+              </div>
+
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Self-driving robotic vehicle with HC-SR04 ultrasonic radar scanning, servo sweep mapping, and dynamic trajectory replanning via Arduino Uno and L298N driver.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Arduino Uno</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">HC-SR04</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">L298N</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Embedded C</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-2 border-t border-slate-800/60 mt-4">
+            <button onclick="openDetails('obstacle')" class="w-full py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center justify-center gap-1.5">
+              <span>View Hardware Specs & Schematic</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 6: Graphic Design & UI/UX -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between"
+             data-category="design" data-search="graphic design ui ux figma photoshop branding identity vector posters wireframes">
+          <div>
+            <div class="h-44 relative bg-gradient-to-tr from-slate-950 via-slate-900 to-pink-950 p-5 flex flex-col justify-between border-b border-slate-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-pink-500/20 rounded-full blur-xl"></div>
+              <div class="flex items-center justify-between z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold uppercase bg-pink-500/20 text-pink-300 border border-pink-500/30">
+                  Creative & UI/UX
+                </span>
+                <span class="text-xs font-mono text-pink-300 font-bold">2nd Prize Logo</span>
+              </div>
+              <div class="z-10 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-pink-500/20 border border-pink-400/30 flex items-center justify-center text-pink-300 text-xl">
+                  <i class="fa-solid fa-palette"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-pink-300 font-mono font-semibold">BRAND & PRODUCT DESIGN</div>
+                  <div class="text-lg font-bold text-white leading-tight">Visual Identity & Design</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-4">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-pink-500/10 text-pink-300 border border-pink-500/20">
+                <i class="fa-solid fa-wand-magic-sparkles text-[10px]"></i>
+                <span>10+ Client Brand Identities, UI Wireframes & Assets</span>
+              </div>
+
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Design portfolio covering high-fidelity Figma web/mobile interfaces, custom brand vectors, promotional digital media, and typographic hierarchy.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Figma</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Adobe Photoshop</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">UI/UX</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Illustrator</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-2 border-t border-slate-800/60 mt-4">
+            <button onclick="openDetails('design')" class="w-full py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center justify-center gap-1.5">
+              <span>View Design Case Study</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== LIVE INTERACTIVE DEMOS SECTION ==================== -->
+  <section id="demos" class="py-16 border-t border-slate-800/60 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+          <i class="fa-solid fa-terminal"></i> In-Browser Simulation
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Live Interactive Telemetry Demos</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Experience real-time threat modeling, cryptographic disk sanitization, cellular GPS telemetry, and satellite ground links directly in your browser.
+        </p>
+      </div>
+
+      <!-- Demo Grid: 4 Interactive Simulators -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Live Demo 1: CyberResilience AI Intrusion Simulator -->
+        <div class="glass-card rounded-2xl p-6 border border-purple-500/30">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-300">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">CyberResilience AI Threat Telemetry</h3>
+                <p class="text-xs text-purple-300 font-mono">MITRE ATT&CK Model Simulator</p>
+              </div>
+            </div>
+            <span id="threatStatusBadge" class="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+              IDLE / NORMAL
+            </span>
+          </div>
+
+          <div class="mt-4 space-y-4">
+            <div class="bg-black/60 rounded-xl p-4 font-mono text-xs text-slate-300 space-y-2 border border-slate-800" id="threatConsole">
+              <div class="text-slate-500">// AI Model Loaded: PyTorch Network Classifier v2.4</div>
+              <div class="text-slate-500">// Ingress Interface: eth0 (Promiscuous Mode)</div>
+              <div id="threatLog" class="text-emerald-400">&gt; Monitoring packet stream... No anomalies detected.</div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                <span class="text-slate-500 block">Anomaly Score</span>
+                <span id="anomalyScoreVal" class="text-lg font-bold text-white">0.02</span>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                <span class="text-slate-500 block">Mitigation Status</span>
+                <span id="mitigationVal" class="text-lg font-bold text-slate-400">Standby</span>
+              </div>
+            </div>
+
+            <!-- Simulation Action Buttons -->
+            <div class="flex flex-wrap gap-2 pt-2">
+              <button onclick="simulateAttack('syn_flood')" class="px-3 py-2 rounded-lg bg-rose-600/20 hover:bg-rose-600/30 text-rose-300 border border-rose-500/40 text-xs font-semibold transition">
+                <i class="fa-solid fa-bug mr-1"></i> Inject SYN Flood (T1498)
+              </button>
+              <button onclick="simulateAttack('exfiltration')" class="px-3 py-2 rounded-lg bg-amber-600/20 hover:bg-amber-600/30 text-amber-300 border border-amber-500/40 text-xs font-semibold transition">
+                <i class="fa-solid fa-user-secret mr-1"></i> Data Exfiltration (T1048)
+              </button>
+              <button onclick="resetAttackSim()" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition">
+                <i class="fa-solid fa-rotate-right mr-1"></i> Reset Feed
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Demo 2: Datanix Cryptographic Disk Sanitizer -->
+        <div class="glass-card rounded-2xl p-6 border border-cyan-500/30">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-300">
+                <i class="fa-solid fa-hard-drive"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">Datanix Secure Disk Sanitizer</h3>
+                <p class="text-xs text-cyan-300 font-mono">DoD 5220.22-M & NIST SP 800-88</p>
+              </div>
+            </div>
+            <span id="wipeStatusBadge" class="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+              READY
+            </span>
+          </div>
+
+          <div class="mt-4 space-y-4">
+            <div class="space-y-2">
+              <div class="flex justify-between text-xs font-mono text-slate-400">
+                <span>Sanitization Pass Progress (<span id="wipePassName">0/3 Passes</span>)</span>
+                <span id="wipePercentText" class="text-cyan-400 font-bold">0%</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden border border-slate-700">
+                <div id="wipeProgressBar" class="bg-gradient-to-r from-cyan-400 to-teal-400 h-full w-0 transition-all duration-300"></div>
+              </div>
+            </div>
+
+            <!-- Hex stream simulation -->
+            <div class="bg-black/60 rounded-xl p-3 font-mono text-[11px] text-cyan-400/80 h-20 overflow-hidden border border-slate-800" id="hexConsole">
+              [SECTOR 0x00000000] 00 00 00 00 00 00 00 00 | READY TO SANITIZE
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <button id="startWipeBtn" onclick="runWipeSim()" class="px-4 py-2 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-black font-bold text-xs transition glow-cyan">
+                <i class="fa-solid fa-play mr-1.5"></i> Run DoD 3-Pass Wipe
+              </button>
+              <button onclick="resetWipeSim()" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition">
+                Reset Drive
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Demo 3: SafeTrack SOS Emergency Telemetry -->
+        <div class="glass-card rounded-2xl p-6 border border-rose-500/30">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center text-rose-300">
+                <i class="fa-solid fa-tower-broadcast"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">SafeTrack SOS Emergency Uplink</h3>
+                <p class="text-xs text-rose-300 font-mono">ESP32 + NEO-6M GPS + SIM800L</p>
+              </div>
+            </div>
+            <span id="sosStatusBadge" class="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+              STANDBY
+            </span>
+          </div>
+
+          <div class="mt-4 space-y-4">
+            <div class="bg-black/60 rounded-xl p-3 font-mono text-xs text-slate-300 space-y-1.5 border border-slate-800" id="sosConsole">
+              <div class="text-slate-500">// Hardware: ESP32-WROOM-32 @ 240MHz</div>
+              <div class="text-slate-500">// GPS Fix: Lat: 11.1085° N, Lon: 77.3411° E (Tirupur)</div>
+              <div id="sosLog" class="text-slate-300">&gt; GPS Lock: 8 Satellites tracked. Ready for SOS trigger.</div>
+            </div>
+
+            <div class="flex items-center justify-between gap-4 p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs">
+              <div>
+                <span class="text-slate-400 block font-mono">Cellular Uplink</span>
+                <span class="text-white font-bold" id="sosUplinkStatus">SIM800L Connected (4G Failover)</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block font-mono">Battery</span>
+                <span class="text-emerald-400 font-bold">3.7V Li-Po (98%)</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <button onclick="triggerSosEmergency()" id="sosTriggerBtn" class="px-4 py-2 rounded-lg bg-rose-500 hover:bg-rose-400 text-white font-bold text-xs transition shadow-lg">
+                <i class="fa-solid fa-bell mr-1"></i> Trigger Hardware SOS
+              </button>
+              <button onclick="resetSosDemo()" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition">
+                Reset Device
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Demo 4: SATLINK Satellite Ground Link Decoder -->
+        <div class="glass-card rounded-2xl p-6 border border-sky-500/30">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-sky-500/20 flex items-center justify-center text-sky-300">
+                <i class="fa-solid fa-satellite"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">SATLINK Orbital Telemetry Decoder</h3>
+                <p class="text-xs text-sky-300 font-mono">ESP32-S3 + LoRa RF + AES-256</p>
+              </div>
+            </div>
+            <span id="satStatusBadge" class="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/30">
+              ORBIT TRACKING
+            </span>
+          </div>
+
+          <div class="mt-4 space-y-4">
+            <div class="bg-black/60 rounded-xl p-3 font-mono text-xs text-slate-300 space-y-1.5 border border-slate-800" id="satConsole">
+              <div class="text-slate-500">// LEO CubeSat Downlink Frequency: 437.525 MHz</div>
+              <div class="text-slate-500">// Cryptographic Algorithm: AES-256-GCM Verification</div>
+              <div id="satLog" class="text-sky-300">&gt; Waiting for next orbital packet pass...</div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                <span class="text-slate-500 block">Doppler Shift</span>
+                <span id="satDopplerVal" class="text-base font-bold text-cyan-300">+2.4 kHz (Compensated)</span>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+                <span class="text-slate-500 block">Crypto Verification</span>
+                <span id="satCryptoVal" class="text-base font-bold text-emerald-400">Authenticated</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <button onclick="decodeOrbitalPacket()" class="px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-black font-bold text-xs transition">
+                <i class="fa-solid fa-satellite-dish mr-1"></i> Capture & Decode Orbit Packet
+              </button>
+              <button onclick="resetSatlinkDemo()" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition">
+                Reset Downlink
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE & INTERNSHIP ==================== -->
+  <section id="experience" class="py-16 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-2xl mb-12">
+        <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+          <i class="fa-solid fa-briefcase"></i> Work History
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Internship & Experience</h2>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Hack up Technology Internship Card -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 relative border-l-4 border-l-cyan-400">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                CYBERSECURITY & ETHICAL HACKING INTERN
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mt-2">Hack up Technology</h3>
+              <p class="text-sm text-slate-400">Security Research & Threat Analysis Intern • Coimbatore, Tamil Nadu</p>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-mono text-cyan-300 bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
+                June 2025 – July 2025
+              </span>
+            </div>
+          </div>
+
+          <p class="text-sm text-slate-300 leading-relaxed mb-6">
+            Completed intensive practical training in ethical hacking, vulnerability scanning, network traffic auditing, and data forensics.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-300">
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-cyan-400 mt-1 text-xs"></i>
+              <span>Performed network scanning, port enumeration, and service vulnerability auditing using <strong>Nmap</strong>.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-cyan-400 mt-1 text-xs"></i>
+              <span>Conducted penetration testing challenges across <strong>Hack The Box</strong> and <strong>TryHackMe</strong> environments.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-cyan-400 mt-1 text-xs"></i>
+              <span>Audited web application endpoints using <strong>Burp Suite</strong> to detect injection vulnerabilities and auth flaws.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-cyan-400 mt-1 text-xs"></i>
+              <span>Utilized forensic disk analysis tools and <strong>Wireshark</strong> packet analysis to investigate anomalous sessions.</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-2">
+            <span class="text-xs text-slate-400 font-medium mr-2">Tools Used:</span>
+            <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300">Nmap</span>
+            <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300">Burp Suite</span>
+            <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300">Wireshark</span>
+            <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300">Hack The Box</span>
+            <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300">TryHackMe</span>
+            <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300">Kali Linux</span>
+          </div>
+        </div>
+
+        <!-- Project Team Leader Card -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 relative border-l-4 border-l-teal-400">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                TEAM LEADERSHIP
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mt-2">Project Team Leader</h3>
+              <p class="text-sm text-slate-400">Akshaya College of Engineering & Technology • Coimbatore</p>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-mono text-teal-300 bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
+                Oct 2023 – Present
+              </span>
+            </div>
+          </div>
+
+          <p class="text-sm text-slate-300 leading-relaxed mb-4">
+            Spearheaded multi-disciplinary student engineering teams developing innovative IoT hardware prototypes, Python Flask backends, and cybersecurity proof-of-concepts for collegiate symposiums and state-level hackathons.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300">Project Management</span>
+            <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300">Hardware Integration</span>
+            <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-800 text-slate-300">Technical Presentations</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS & TOOLS ==================== -->
+  <section id="skills" class="py-16 border-t border-slate-800/60 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-2xl mb-12">
+        <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+          <i class="fa-solid fa-microchip"></i> Capabilities
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Technical Skills & Tooling</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Programming -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Programming</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Python</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">C</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">C++</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Embedded C</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">JavaScript</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">SQL</span>
+          </div>
+        </div>
+
+        <!-- Cybersecurity -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-shield-virus"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Cybersecurity & Forensics</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Wireshark</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Nmap</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Burp Suite</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">NIST SP 800-88</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Kali Linux</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Autopsy</span>
+          </div>
+        </div>
+
+        <!-- Hardware & IoT -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-satellite"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Hardware & Embedded IoT</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">ESP32 / ESP8266</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Arduino Uno</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">NEO-6M GPS</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">SIM800L GSM</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">LoRa RF</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Hardware Servicing</span>
+          </div>
+        </div>
+
+        <!-- UI & Cloud -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Design, Web & Cloud</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Figma</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Photoshop</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Illustrator</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Flask</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">MongoDB</span>
+            <span class="px-2.5 py-1 rounded-md text-xs bg-slate-800 text-slate-200 border border-slate-700">Oracle Cloud</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== EDUCATION, CERTIFICATIONS & AWARDS ==================== -->
+  <section id="awards" class="py-16 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Education -->
+        <div>
+          <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-graduation-cap"></i> Academics
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-6">Education Background</h2>
+
+          <div class="space-y-4">
+            <div class="glass-card rounded-2xl p-6 border-l-4 border-l-teal-400">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-lg font-bold text-white">B.E. Computer Science & Engineering</h3>
+                  <p class="text-sm text-teal-300 font-medium">Akshaya College of Engineering and Technology</p>
+                  <p class="text-xs text-slate-400 mt-1">Coimbatore, Tamil Nadu • 2023 – 2027</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-teal-400 text-slate-950">
+                  CGPA: 7.27
+                </span>
+              </div>
+              <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-300">
+                Core coursework: Cryptography & Network Security, Operating Systems, Database Management Systems, Computer Networks, Hardware–Software Integration.
+              </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 border-l-4 border-l-slate-600">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h4 class="text-base font-bold text-white">HSC (Higher Secondary Certificate)</h4>
+                  <p class="text-xs text-slate-300">Sri Sai Matriculation Higher Secondary School, Tirupur</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">2021 – 2023</p>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700">
+                  71%
+                </span>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 border-l-4 border-l-slate-700">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h4 class="text-base font-bold text-white">SSLC (Secondary School Leaving Certificate)</h4>
+                  <p class="text-xs text-slate-300">Sri Sai Matriculation Higher Secondary School, Tirupur</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">2020 – 2021</p>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700">
+                  70.6%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Certifications -->
+          <div class="mt-8">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-stamp text-cyan-400"></i> Certifications
+            </h3>
+            <div class="space-y-3">
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Oracle Cloud Infrastructure 2025 Certified Foundations Associate</div>
+                  <div class="text-xs text-cyan-400">Oracle University • Code: OCI-2025-FA</div>
+                </div>
+                <span class="text-xs font-mono text-slate-400">May 2025</span>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Full Stack Development Certification</div>
+                  <div class="text-xs text-slate-400">NoviTech R&D Private Limited</div>
+                </div>
+                <span class="text-xs font-mono text-slate-400">Apr 2025</span>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Diploma in Computer Hardware Servicing</div>
+                  <div class="text-xs text-slate-400">Mohan Institute of Technology</div>
+                </div>
+                <span class="text-xs font-mono text-slate-400">Jul 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Awards & Recognitions -->
+        <div>
+          <div class="inline-flex items-center gap-2 text-amber-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-trophy"></i> Honors
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-6">Awards & Competitions</h2>
+
+          <div class="space-y-4">
+            <div class="glass-card rounded-xl p-4 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-white">First Prize – Demo Day Project Competition</div>
+                <div class="text-xs text-slate-400">Akshaya College of Engineering and Technology • Nov 2023</div>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-white">First Prize – Paper Presentation Competition</div>
+                <div class="text-xs text-slate-400">Hindustan College of Engineering • Mar 2026</div>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-medal"></i>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-white">First Prize – Tech Day Project Competition</div>
+                <div class="text-xs text-slate-400">Akshaya College of Engineering and Technology • Mar 2026</div>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-white">Second Prize – Logo Lingo Graphic Design Competition</div>
+                <div class="text-xs text-slate-400">PSG College of Arts & Science • Mar 2025</div>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-bug"></i>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-white">Participant – C-DAC BOSS OS National Bug Bounty Challenge</div>
+                <div class="text-xs text-slate-400">VIT Chennai Hub • 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== RESUME DOWNLOAD & CONTACT SECTION ==================== -->
+  <section id="contact" class="py-20 border-t border-slate-800/60 bg-gradient-to-b from-slate-950/60 to-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Contact Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-paper-plane"></i> Get in Touch
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Let's Build Something Resilient.</h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            I am currently open to full-time engineering positions, cybersecurity research roles, and technical consultancies. Feel free to connect directly or send a message.
+          </p>
+
+          <!-- Download Card -->
+          <div class="glass-card rounded-2xl p-5 border border-cyan-500/30">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-file-pdf text-3xl text-rose-400"></i>
+                <div>
+                  <h4 class="font-bold text-white text-sm">HariKrishnan_Resume.pdf</h4>
+                  <p class="text-xs text-slate-400">Official Resume • Verified</p>
+                </div>
+              </div>
+              <a href="./assets/documents/HariKrishnan_Resume.pdf" target="_blank" download="HariKrishnan_Resume.pdf"
+                 class="px-4 py-2 rounded-xl text-xs font-bold bg-cyan-400 text-black hover:bg-cyan-300 transition shadow glow-cyan">
+                <i class="fa-solid fa-download mr-1"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-2 text-sm text-slate-300">
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800">
+              <i class="fa-solid fa-envelope text-cyan-400 text-base"></i>
+              <a href="mailto:harikrishnansenthil79@gmail.com" class="hover:text-cyan-400 transition font-mono">
+                harikrishnansenthil79@gmail.com
+              </a>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800">
+              <i class="fa-solid fa-phone text-teal-400 text-base"></i>
+              <a href="tel:+917639294309" class="hover:text-teal-400 transition font-mono">
+                +91 76392 94309
+              </a>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800">
+              <i class="fa-brands fa-github text-purple-400 text-base"></i>
+              <a href="https://github.com/Krishnan1212006" target="_blank" rel="noopener" class="hover:text-purple-400 transition font-mono">
+                github.com/Krishnan1212006
+              </a>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800">
+              <i class="fa-brands fa-linkedin text-cyan-400 text-base"></i>
+              <a href="https://linkedin.com/in/hari-krishnan-031b46284" target="_blank" rel="noopener" class="hover:text-cyan-400 transition font-mono">
+                linkedin.com/in/hari-krishnan-031b46284
+              </a>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800">
+              <i class="fa-solid fa-location-dot text-rose-400 text-base"></i>
+              <span>Tirupur, Tamil Nadu, India</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Interactive Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-card rounded-3xl p-6 sm:p-8">
+            <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-6">Direct communication to Harikrishnan's primary inbox.</p>
+
+            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5">Your Name</label>
+                  <input type="text" id="senderName" required placeholder="John Doe"
+                         class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1.5">Your Email</label>
+                  <input type="email" id="senderEmail" required placeholder="john@example.com"
+                         class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Subject</label>
+                <input type="text" id="senderSubject" placeholder="Project Discussion / Job Opportunity"
+                       class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Message</label>
+                <textarea id="senderMsg" rows="4" required placeholder="Hi Harikrishnan, I reviewed your SATLINK and CyberResilience projects..."
+                          class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition"></textarea>
+              </div>
+
+              <button type="submit" id="submitFormBtn"
+                      class="w-full py-3.5 rounded-xl font-bold bg-gradient-to-r from-cyan-400 to-teal-400 text-black hover:brightness-110 transition shadow-lg glow-cyan flex items-center justify-center gap-2">
+                <i class="fa-solid fa-paper-plane text-sm"></i>
+                <span>Send Message to Harikrishnan</span>
+              </button>
+            </form>
+
+            <div id="formSuccessAlert" class="hidden mt-4 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-sm flex items-center gap-3">
+              <i class="fa-solid fa-circle-check text-xl"></i>
+              <div>
+                <div class="font-bold">Message Ready!</div>
+                <div class="text-xs text-emerald-400">Opening your email client to send directly to Harikrishnan S.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== WEBSITE FOOTER ==================== -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-12 text-slate-400 text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800/80">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-cyan-400 flex items-center justify-center text-black font-extrabold text-sm overflow-hidden">
+            <img src="./assets/images/avatar.jpg" alt="Harikrishnan S" class="w-full h-full object-cover" onerror="this.style.display='none';">
+          </div>
+          <span class="font-bold text-white text-base">HARIKRISHNAN S</span>
+          <span class="text-slate-500">|</span>
+          <span>Computer Science & Cybersecurity Engineer</span>
+        </div>
+
+        <div class="flex items-center space-x-6 text-sm">
+          <a href="#about" class="hover:text-cyan-400 transition">About</a>
+          <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+          <a href="#demos" class="hover:text-cyan-400 transition">Live Demos</a>
+          <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
+          <a href="./assets/documents/HariKrishnan_Resume.pdf" target="_blank" class="hover:text-cyan-400 transition">Resume PDF</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>
+          © 2026 Harikrishnan S. All rights reserved. Pure Responsive Web Architecture.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/Krishnan1212006" target="_blank" rel="noopener" class="hover:text-cyan-400 transition flex items-center gap-1">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <span>•</span>
+          <a href="https://linkedin.com/in/hari-krishnan-031b46284" target="_blank" rel="noopener" class="hover:text-cyan-400 transition flex items-center gap-1">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <span>•</span>
+          <span>Tirupur, India</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== PROJECT DETAILS MODAL ==================== -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-700 max-w-2xl w-full rounded-2xl overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
+      <div class="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-950/60">
+        <div>
+          <span id="modalCategory" class="text-xs font-mono text-cyan-400 font-semibold uppercase">Category</span>
+          <h3 id="modalTitle" class="text-xl font-bold text-white mt-1">Project Title</h3>
+        </div>
+        <button onclick="closeModal()" aria-label="Close modal" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      
+      <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-300">
+        <div id="modalHighlight" class="p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-semibold">
+          Key Highlight
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white text-xs uppercase font-mono tracking-wider mb-1">Architecture & Implementation</h4>
+          <p id="modalDesc" class="leading-relaxed text-slate-300">Detailed description here.</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white text-xs uppercase font-mono tracking-wider mb-2">Technologies & Protocols</h4>
+          <div id="modalTechs" class="flex flex-wrap gap-1.5"></div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-800 bg-slate-950/60 flex justify-between items-center gap-3">
+        <a id="modalGithubLink" href="https://github.com/Krishnan1212006" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold flex items-center gap-2">
+          <i class="fa-brands fa-github text-sm"></i>
+          <span>View on GitHub</span>
+        </a>
+        <button onclick="closeModal()" class="px-4 py-2 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-black text-xs font-bold">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Interactivity, Demos, Filters & Modals -->
+  <script>
+    // Project Database
+    const projectsData = {
+      cyber: {
+        title: "CyberResilience AI: Threat Intelligence",
+        category: "Cybersecurity & Machine Learning",
+        highlight: "Real-Time Anomaly Scoring & MITRE ATT&CK Automated Network Node Quarantine",
+        desc: "An intelligent intrusion detection system processing live raw network telemetry. Combines temporal LSTM/GRU neural network pipelines with Scapy packet feature extraction and signature pattern recognition to counter zero-day attacks, data exfiltration, and SYN flood denial-of-service attempts. Features automated iptables / firewall rules dispatching to isolate compromised nodes within milliseconds.",
+        techs: ["Python", "PyTorch", "Scapy", "LSTM/GRU", "MITRE ATT&CK", "FastAPI", "Zeek", "Suricata", "Wireshark"]
+      },
+      datanix: {
+        title: "Datanix: Certified Data Sanitizer",
+        category: "Cybersecurity & Storage Systems",
+        highlight: "DoD 5220.22-M 3-Pass Overwrite & NIST SP 800-88 Cryptographic Sanitization",
+        desc: "Enterprise storage sanitization solution engineered in Python and C++ to permanently destroy magnetic and solid-state data. Implements the US Department of Defense 5220.22-M 3-pass sanitization standard (zeros, ones, pseudorandom bytes) followed by forensic bitwise verification with Autopsy and Kali Linux wipe utilities to ensure zero data recovery.",
+        techs: ["Python", "C++", "PyQt", "NIST SP 800-88", "DoD 5220.22-M", "SHA-256", "Kali Linux", "Autopsy"]
+      },
+      safetrack: {
+        title: "SafeTrack SOS: Emergency Hardware",
+        category: "Hardware & Embedded IoT",
+        highlight: "Sub-3-Second Cellular GSM Trigger & NEO-6M High-Precision GPS Uplink",
+        desc: "Wearable and vehicle-mountable emergency responder hardware built around an ESP32 microcontroller. Features dual-mode geolocation polling (GPS + Cell Tower Triangulation) with emergency button debounce logic, LoRa fallback, lithium battery backup, and automated SMS/Voice alerting via SIM800L module to an active police dashboard.",
+        techs: ["ESP32", "NEO-6M GPS", "SIM800L GSM", "LoRa", "Embedded C++", "Google Maps API"]
+      },
+      satlink: {
+        title: "SATLINK: Satellite Ground Terminal",
+        category: "Aerospace Communications & RF",
+        highlight: "AES-256 Decryption & Real-Time Doppler Orbital Downlink Processing",
+        desc: "Ground station telemetry terminal listening on UHF/VHF frequencies. Decodes orbital packet downlinks from CubeSats and low-earth orbit payloads. Integrates AES-256 cryptographic verification to defend satellite commanding against spoofing attacks and telemetry interception.",
+        techs: ["ESP32-S3", "LoRa SX1278", "AES-256", "C++", "Orbital Doppler Algorithm", "MQTT", "GNSS"]
+      },
+      obstacle: {
+        title: "Autonomous Obstacle Avoiding Rover",
+        category: "Robotics & Microcontrollers",
+        highlight: "Awarded 1st Prize @ Demo Day Competition with Ultrasonic Servo Scanning Radar",
+        desc: "Autonomous mobile rover navigating unstructured environments without external GPS. Utilizes ultrasonic distance ranging mapped across a 180-degree servo sweep to calculate shortest unobstructed passage vectors via Arduino Uno and L298N motor driver.",
+        techs: ["Arduino Uno", "HC-SR04 Ultrasonic", "SG90 Servo", "L298N H-Bridge", "Embedded C"]
+      },
+      design: {
+        title: "Graphic Design & UI/UX Portfolio",
+        category: "Product & Digital Design",
+        highlight: "2nd Prize Winner Logo Lingo • 10+ Commercial Brand Identities & UI Systems",
+        desc: "Creative portfolio encompassing user journey mapping, design systems, vector illustrations, award-winning logo packages, and marketing collaterals built using industry-standard design tools.",
+        techs: ["Figma", "Adobe Photoshop", "Adobe Illustrator", "Design Systems", "Prototyping"]
+      }
+    };
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Filter Buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-cyan-400', 'text-black');
+          b.classList.add('text-slate-400');
+        });
+        btn.classList.add('active', 'bg-cyan-400', 'text-black');
+        btn.classList.remove('text-slate-400');
+
+        const cat = btn.getAttribute('data-category');
+        projectCards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-category').includes(cat)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Real-Time Search Filter
+    const searchInput = document.getElementById('projectSearch');
+    searchInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      projectCards.forEach(card => {
+        const text = (card.getAttribute('data-search') || '') + ' ' + card.innerText.toLowerCase();
+        if (text.includes(q)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+    // Modal Details Logic
+    function openDetails(key) {
+      const item = projectsData[key];
+      if (!item) return;
+
+      document.getElementById('modalTitle').innerText = item.title;
+      document.getElementById('modalCategory').innerText = item.category;
+      document.getElementById('modalHighlight').innerText = item.highlight;
+      document.getElementById('modalDesc').innerText = item.desc;
+
+      const techContainer = document.getElementById('modalTechs');
+      techContainer.innerHTML = '';
+      item.techs.forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 text-cyan-300 border border-slate-700';
+        span.innerText = t;
+        techContainer.appendChild(span);
+      });
+
+      document.getElementById('projectModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('projectModal').classList.add('hidden');
+    }
+
+    // Close modal on Escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    function openDemo(key) {
+      const target = document.getElementById('demos');
+      target.scrollIntoView({ behavior: 'smooth' });
+      if (key === 'cyber') simulateAttack('syn_flood');
+      if (key === 'datanix') runWipeSim();
+      if (key === 'safetrack') triggerSosEmergency();
+      if (key === 'satlink') decodeOrbitalPacket();
+    }
+
+    // Live Simulator 1: Cyber Threat
+    function simulateAttack(type) {
+      const badge = document.getElementById('threatStatusBadge');
+      const score = document.getElementById('anomalyScoreVal');
+      const mit = document.getElementById('mitigationVal');
+      const log = document.getElementById('threatLog');
+
+      if (type === 'syn_flood') {
+        badge.className = "px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/40 animate-pulse";
+        badge.innerText = "ATTACK DETECTED: SYN FLOOD (T1498)";
+        score.innerText = "0.98 (CRITICAL)";
+        mit.innerText = "IPTABLES DROP ACTIVE";
+        mit.className = "text-lg font-bold text-rose-400";
+        log.innerHTML = `
+          <div class="text-rose-400">&gt; [ALERT] 15,400 packets/sec flagged on TCP port 443!</div>
+          <div class="text-amber-300">&gt; PyTorch Model classification: SYN Flood attack (Confidence: 99.4%)</div>
+          <div class="text-cyan-300">&gt; Executing mitigation: iptables -A INPUT -s 198.51.100.42 -j DROP</div>
+          <div class="text-emerald-400">&gt; Source quarantined. Host latency normalized to 2ms.</div>
+        `;
+      } else if (type === 'exfiltration') {
+        badge.className = "px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/40 animate-pulse";
+        badge.innerText = "DATA EXFILTRATION SUSPECTED (T1048)";
+        score.innerText = "0.87 (HIGH)";
+        mit.innerText = "DNS TUNNEL SEVERED";
+        mit.className = "text-lg font-bold text-amber-400";
+        log.innerHTML = `
+          <div class="text-amber-400">&gt; [ANOMALY] Outbound UDP payload size > 512 bytes on port 53.</div>
+          <div class="text-purple-300">&gt; Shannon Entropy calculation: 7.92 (High encryption/obfuscation).</div>
+          <div class="text-cyan-300">&gt; MITRE ATT&CK mapping: T1048.003 Protocol Tunneling.</div>
+          <div class="text-emerald-400">&gt; Process PID 4092 terminated. Socket closed.</div>
+        `;
+      }
+    }
+
+    function resetAttackSim() {
+      const badge = document.getElementById('threatStatusBadge');
+      badge.className = "px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30";
+      badge.innerText = "IDLE / NORMAL";
+      document.getElementById('anomalyScoreVal').innerText = "0.02";
+      document.getElementById('mitigationVal').innerText = "Standby";
+      document.getElementById('mitigationVal').className = "text-lg font-bold text-slate-400";
+      document.getElementById('threatLog').innerHTML = `&gt; Monitoring packet stream... No anomalies detected.`;
+    }
+
+    // Live Simulator 2: Datanix Disk Wipe
+    let wipeInterval = null;
+    function runWipeSim() {
+      if (wipeInterval) clearInterval(wipeInterval);
+      const bar = document.getElementById('wipeProgressBar');
+      const text = document.getElementById('wipePercentText');
+      const passName = document.getElementById('wipePassName');
+      const hex = document.getElementById('hexConsole');
+      const badge = document.getElementById('wipeStatusBadge');
+
+      let progress = 0;
+      badge.innerText = "WIPING IN PROGRESS";
+      badge.className = "px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/40 animate-pulse";
+
+      wipeInterval = setInterval(() => {
+        progress += 4;
+        if (progress > 100) progress = 100;
+
+        bar.style.width = progress + '%';
+        text.innerText = progress + '%';
+
+        if (progress < 33) {
+          passName.innerText = "Pass 1/3 (Zero Fill 0x00)";
+          hex.innerHTML = `[SECTOR 0x${(progress * 1024).toString(16).padStart(8, '0')}] 00 00 00 00 00 00 00 00 | DoD PASS 1 ZERO-FILL`;
+        } else if (progress < 66) {
+          passName.innerText = "Pass 2/3 (Complement 0xFF)";
+          hex.innerHTML = `[SECTOR 0x${(progress * 1024).toString(16).padStart(8, '0')}] FF FF FF FF FF FF FF FF | DoD PASS 2 COMPLEMENT`;
+        } else if (progress < 100) {
+          passName.innerText = "Pass 3/3 (Random 0xRND)";
+          hex.innerHTML = `[SECTOR 0x${(progress * 1024).toString(16).padStart(8, '0')}] A3 9F 12 D8 4C 7E B0 05 | DoD PASS 3 CRYPTO NOISE`;
+        } else {
+          clearInterval(wipeInterval);
+          passName.innerText = "Verification Complete";
+          badge.innerText = "SANITIZED (100% UNRECOVERABLE)";
+          badge.className = "px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40";
+          hex.innerHTML = `<span class="text-emerald-400">&gt; [SUCCESS] Drive /dev/sdb successfully sanitized per DoD 5220.22-M & NIST SP 800-88. SHA-256 Bitwise audit confirmed zero recovery.</span>`;
+        }
+      }, 70);
+    }
+
+    function resetWipeSim() {
+      if (wipeInterval) clearInterval(wipeInterval);
+      document.getElementById('wipeProgressBar').style.width = '0%';
+      document.getElementById('wipePercentText').innerText = '0%';
+      document.getElementById('wipePassName').innerText = '0/3 Passes';
+      document.getElementById('wipeStatusBadge').innerText = 'READY';
+      document.getElementById('wipeStatusBadge').className = "px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30";
+      document.getElementById('hexConsole').innerText = "[SECTOR 0x00000000] 00 00 00 00 00 00 00 00 | READY TO SANITIZE";
+    }
+
+    // Live Simulator 3: SafeTrack SOS
+    function triggerSosEmergency() {
+      const badge = document.getElementById('sosStatusBadge');
+      const log = document.getElementById('sosLog');
+      const uplink = document.getElementById('sosUplinkStatus');
+
+      badge.innerText = "EMERGENCY ACTIVE";
+      badge.className = "px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/40 animate-pulse";
+      uplink.innerText = "TRANSMITTING ALERTS...";
+      uplink.className = "text-rose-400 font-bold animate-pulse";
+
+      log.innerHTML = `
+        <div class="text-rose-400 font-bold">&gt; [SOS TRIGGERED] Button pressed (Debounce 200ms verified)</div>
+        <div class="text-cyan-300">&gt; GPS Fix: Lat: 11.1085° N, Lon: 77.3411° E | Alt: 310m</div>
+        <div class="text-amber-300">&gt; SIM800L AT Command: AT+CMGS="+919789325965" (SMS Dispatched)</div>
+        <div class="text-emerald-400 font-bold">&gt; Emergency link broadcasted to police dispatch portal: maps.google.com/?q=11.1085,77.3411</div>
+      `;
+    }
+
+    function resetSosDemo() {
+      const badge = document.getElementById('sosStatusBadge');
+      badge.innerText = "STANDBY";
+      badge.className = "px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30";
+      document.getElementById('sosUplinkStatus').innerText = "SIM800L Connected (4G Failover)";
+      document.getElementById('sosUplinkStatus').className = "text-white font-bold";
+      document.getElementById('sosLog').innerText = "> GPS Lock: 8 Satellites tracked. Ready for SOS trigger.";
+    }
+
+    // Live Simulator 4: SATLINK Satellite
+    function decodeOrbitalPacket() {
+      const badge = document.getElementById('satStatusBadge');
+      const log = document.getElementById('satLog');
+      const doppler = document.getElementById('satDopplerVal');
+      const crypto = document.getElementById('satCryptoVal');
+
+      badge.innerText = "PACKET LOCKED";
+      badge.className = "px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-sky-500/20 text-sky-300 border border-sky-500/40 animate-pulse";
+      doppler.innerText = "+1.8 kHz (Tracking)";
+      crypto.innerText = "AES-256 Validated";
+
+      log.innerHTML = `
+        <div class="text-sky-300">&gt; [UHF DOWNLINK] 437.525 MHz carrier locked (RSSI: -94 dBm, SNR: 8.2 dB)</div>
+        <div class="text-purple-300">&gt; Raw Payload: 0x5341544C494E4B5F4F524249545F3432</div>
+        <div class="text-cyan-300">&gt; Decrypting with AES-256-GCM hardware key... Auth Tag OK</div>
+        <div class="text-emerald-400">&gt; Telemetry: CubeSat Temp: 18.4°C | Bus: 3.82V | Solar: 420mW | Orbit Pass: 87.2 min</div>
+      `;
+    }
+
+    function resetSatlinkDemo() {
+      const badge = document.getElementById('satStatusBadge');
+      badge.innerText = "ORBIT TRACKING";
+      badge.className = "px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/30";
+      document.getElementById('satDopplerVal').innerText = "+2.4 kHz (Compensated)";
+      document.getElementById('satCryptoVal').innerText = "Authenticated";
+      document.getElementById('satLog').innerText = "> Waiting for next orbital packet pass...";
+    }
+
+    // Contact Form Action
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const email = document.getElementById('senderEmail').value;
+      const subject = document.getElementById('senderSubject').value || 'Portfolio Inquiry';
+      const msg = document.getElementById('senderMsg').value;
+
+      document.getElementById('formSuccessAlert').classList.remove('hidden');
+
+      // Trigger mailto intent
+      const mailtoUrl = `mailto:harikrishnansenthil79@gmail.com?subject=${encodeURIComponent(subject + ' - from ' + name)}&body=${encodeURIComponent(msg + '\n\nSender Email: ' + email)}`;
+      window.location.href = mailtoUrl;
+    }
+  </script>
+</body>
+</html>

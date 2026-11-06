@@ -1,0 +1,7 @@
+{
+  "name": "Hari Krishnan.s - Developer Portfolio Website",
+  "description": "Responsive developer portfolio website showcasing cybersecurity expertise, IoT implementations, interactive telemetry demos, skills, and awards.",
+  "version": "1.0.0",
+  "format": "website",
+  "entrypoint": "index.html"
+}
