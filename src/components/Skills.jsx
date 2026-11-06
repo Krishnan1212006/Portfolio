@@ -55,14 +55,14 @@ export default function Skills() {
   const textSec  = isDark ? '#C9BFD1' : '#53665A';
 
   return (
-    <section id="skills" className="py-16 relative" style={{ borderTop: `1px solid ${accent}15` }}>
+    <section id="skills" className="py-12 sm:py-16 relative" style={{ borderTop: `1px solid ${accent}15` }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-2xl mb-12">
+        <div className="max-w-2xl mb-8 sm:mb-12">
           <div className="section-label inline-flex items-center gap-2 mb-2">
             <i className="fa-solid fa-microchip"></i> Capabilities &amp; Stack
           </div>
-          <h2 className="section-title text-3xl sm:text-4xl font-extrabold">
+          <h2 className="section-title text-2xl sm:text-4xl font-extrabold">
             Technical Skills &amp; Tooling
           </h2>
           <p className="text-sm mt-1" style={{ color: textSec }}>

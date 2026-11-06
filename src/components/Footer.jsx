@@ -35,7 +35,7 @@ export default function Footer() {
         style={{ background: isDark ? '#1B0B29' : '#E7F3E9', borderTop: `1px solid ${accent}20` }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
 
             {/* Brand */}
             <div>

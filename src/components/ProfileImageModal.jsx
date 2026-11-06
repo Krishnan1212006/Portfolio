@@ -32,7 +32,7 @@ export default function ProfileImageModal({ onClose }) {
       aria-label="HD Profile Photo"
     >
       <div
-        className="modal-content relative max-w-md w-full mx-4 rounded-2xl overflow-hidden shadow-2xl"
+        className="modal-content relative max-w-sm sm:max-w-md w-[92vw] mx-auto rounded-2xl overflow-hidden shadow-2xl"
         style={{ background: bgColor, border: `2px solid ${borderColor}` }}
         onClick={e => e.stopPropagation()}
       >
@@ -40,19 +40,19 @@ export default function ProfileImageModal({ onClose }) {
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full flex items-center justify-center transition hover:scale-110"
-          style={{ background: 'rgba(0,0,0,0.4)', color: '#FFFFFF', backdropFilter: 'blur(4px)' }}
+          className="absolute top-2.5 right-2.5 z-20 w-9 h-9 rounded-full flex items-center justify-center transition hover:scale-110 shadow-lg"
+          style={{ background: 'rgba(0,0,0,0.5)', color: '#FFFFFF', backdropFilter: 'blur(6px)' }}
         >
-          <i className="fa-solid fa-xmark text-lg"></i>
+          <i className="fa-solid fa-xmark text-base"></i>
         </button>
 
         {/* Image */}
-        <div className="w-full flex items-center justify-center p-3 pt-4" style={{ maxHeight: '75vh' }}>
+        <div className="w-full flex items-center justify-center p-2.5 sm:p-3 pt-3 sm:pt-4" style={{ maxHeight: '68vh' }}>
           <img
             src="./images/hari-profile.jpg"
             alt="HD Profile Photo of Hari Krishnan.S"
-            className="w-full h-full object-contain rounded-xl shadow-lg"
-            style={{ maxHeight: '70vh', display: 'block' }}
+            className="w-full h-full object-contain rounded-xl shadow-md"
+            style={{ maxHeight: '64vh', display: 'block' }}
             loading="eager"
             onError={(e) => {
               if (!e.target.src.includes('avatar.jpg')) {
@@ -64,16 +64,16 @@ export default function ProfileImageModal({ onClose }) {
 
         {/* Title bar */}
         <div
-          className="px-6 py-4 text-center"
+          className="px-4 py-3 sm:px-6 sm:py-3.5 text-center"
           style={{ borderTop: `1px solid ${borderColor}30`, background: bgColor }}
         >
           <h3
-            className="text-base font-bold tracking-widest"
+            className="text-xs sm:text-sm font-bold tracking-wider sm:tracking-widest leading-tight"
             style={{ fontFamily: 'JetBrains Mono, monospace', color: borderColor }}
           >
             HD PROFILE PHOTO • HARI KRISHNAN.S
           </h3>
-          <p className="text-sm mt-0.5" style={{ color: subColor }}>
+          <p className="text-[11px] sm:text-xs mt-0.5" style={{ color: subColor }}>
             Cybersecurity &amp; Embedded IoT
           </p>
         </div>

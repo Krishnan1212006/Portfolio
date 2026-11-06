@@ -20,15 +20,15 @@ export default function Experience() {
   const lineColors = [accent, isDark ? '#a855f7' : '#20A56B', isDark ? '#67e8f9' : '#059669'];
 
   return (
-    <section id="experience" className="py-16 relative" style={{ borderTop: `1px solid ${accent}15`, background: isDark ? 'rgba(27,11,41,0.5)' : 'rgba(231,243,233,0.4)' }}>
+    <section id="experience" className="py-12 sm:py-16 relative" style={{ borderTop: `1px solid ${accent}15`, background: isDark ? 'rgba(27,11,41,0.5)' : 'rgba(231,243,233,0.4)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-2xl mb-12">
-          <div className="section-label inline-flex items-center gap-2 mb-2">
+        <div className="max-w-2xl mb-8 sm:mb-12">
+          <div className="section-label inline-flex items-center gap-2 mb-1.5 sm:mb-2 text-xs">
             <i className="fa-solid fa-briefcase"></i> Work History
           </div>
-          <h2 className="section-title text-3xl sm:text-4xl font-extrabold">Internship Experience</h2>
-          <p className="text-sm mt-1" style={{ color: textSec }}>
+          <h2 className="section-title text-2xl sm:text-4xl font-extrabold">Internship Experience</h2>
+          <p className="text-xs sm:text-sm mt-1" style={{ color: textSec }}>
             Three progressive tenures at Hackup Technology focusing on ethical hacking, IoT emergency systems, and web application penetration testing.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function Experience() {
             style={{ background: `linear-gradient(to bottom, ${accent}, transparent)`, opacity: 0.4 }}
           />
 
-          <div className="space-y-6 sm:pl-14">
+          <div className="space-y-4 sm:space-y-6 sm:pl-14">
             {experienceData.map((item, idx) => {
               const bc = badgeColors[idx % badgeColors.length];
               const lc = lineColors[idx % lineColors.length];
@@ -57,7 +57,7 @@ export default function Experience() {
                   </div>
 
                   <div
-                    className="themed-card rounded-2xl p-6 sm:p-7 relative overflow-hidden"
+                    className="themed-card rounded-2xl p-4 sm:p-7 relative overflow-hidden"
                     style={{
                       background: bgCard,
                       border: `1px solid ${border}`,
@@ -70,26 +70,26 @@ export default function Experience() {
                       style={{ background: `${lc}08` }}
                     />
 
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3.5 sm:mb-4">
                       <div>
                         <span
-                          className="px-3 py-1 rounded-full text-xs font-mono font-bold"
+                          className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-mono font-bold inline-block"
                           style={{ background: bc.bg, color: bc.text, border: `1px solid ${bc.border}` }}
                         >
                           {item.badge}
                         </span>
                         <h3
-                          className="text-xl sm:text-2xl font-bold mt-2"
+                          className="text-lg sm:text-2xl font-bold mt-1.5 sm:mt-2"
                           style={{ fontFamily: 'Space Grotesk, sans-serif', color: textMain }}
                         >
                           {item.company}
                         </h3>
-                        <p className="text-sm mt-0.5" style={{ color: textSec }}>
+                        <p className="text-xs sm:text-sm mt-0.5" style={{ color: textSec }}>
                           {item.role} &bull; {item.location}
                         </p>
                       </div>
                       <span
-                        className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-mono"
+                        className="self-start sm:self-auto shrink-0 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-mono"
                         style={{
                           background: isDark ? '#100718' : '#F5FAF6',
                           color: accent,
@@ -100,13 +100,13 @@ export default function Experience() {
                       </span>
                     </div>
 
-                    <p className="text-sm leading-relaxed mb-5" style={{ color: textSec }}>
+                    <p className="text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5" style={{ color: textSec }}>
                       {item.desc}
                     </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm mb-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm mb-4 sm:mb-5">
                       {item.bullets.map((bullet, bIdx) => (
-                        <div key={bIdx} className="flex items-start gap-2.5">
+                        <div key={bIdx} className="flex items-start gap-2">
                           <i className="fa-solid fa-circle-check mt-1 text-xs shrink-0" style={{ color: accent }}></i>
                           <span style={{ color: textSec }}>{bullet}</span>
                         </div>
@@ -114,10 +114,10 @@ export default function Experience() {
                     </div>
 
                     <div
-                      className="pt-4 flex flex-wrap items-center gap-2"
+                      className="pt-3 sm:pt-4 flex flex-wrap items-center gap-1.5 sm:gap-2"
                       style={{ borderTop: `1px solid ${border}` }}
                     >
-                      <span className="text-xs font-medium mr-1" style={{ color: textSec }}>Tools:</span>
+                      <span className="text-[11px] sm:text-xs font-medium mr-1" style={{ color: textSec }}>Tools:</span>
                       {item.tools.map((tool, tIdx) => (
                         <span
                           key={tIdx}

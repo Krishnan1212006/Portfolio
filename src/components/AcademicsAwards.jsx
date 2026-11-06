@@ -20,17 +20,17 @@ export default function AcademicsAwards() {
   };
 
   return (
-    <section id="awards" className="py-16 relative" style={{ borderTop: `1px solid ${accent}15`, background: isDark ? 'rgba(27,11,41,0.5)' : 'rgba(231,243,233,0.4)' }}>
+    <section id="awards" className="py-12 sm:py-16 relative" style={{ borderTop: `1px solid ${accent}15`, background: isDark ? 'rgba(27,11,41,0.5)' : 'rgba(231,243,233,0.4)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="section-label inline-flex items-center gap-2 mb-2">
           <i className="fa-solid fa-graduation-cap"></i> Academics &amp; Honors
         </div>
-        <h2 className="section-title text-3xl sm:text-4xl font-extrabold mb-10">
+        <h2 className="section-title text-2xl sm:text-4xl font-extrabold mb-6 sm:mb-10">
           Education, Certifications &amp; Awards
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
 
           {/* ════ LEFT: Education + Certifications ════ */}
           <div className="space-y-8">
@@ -148,7 +148,7 @@ export default function AcademicsAwards() {
                 return (
                   <div
                     key={idx}
-                    className="themed-card rounded-xl p-4 flex items-center justify-between gap-4"
+                    className="themed-card rounded-xl p-4 flex items-start sm:items-center justify-between gap-4 flex-wrap sm:flex-nowrap"
                     style={{ background: bgCard, border: `1px solid ${border}` }}
                   >
                     <div className="flex items-center gap-4">
@@ -167,7 +167,7 @@ export default function AcademicsAwards() {
                     </div>
                     {award.badge && (
                       <span
-                        className="hidden sm:inline-flex px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold shrink-0"
+                        className="inline-flex px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold shrink-0"
                         style={{ background: ac.bg, color: ac.text, border: `1px solid ${ac.border}` }}
                       >
                         {award.badge}

@@ -34,28 +34,28 @@ export default function ProjectModal({ project, onClose }) {
       aria-label={project.title}
     >
       <div
-        className="modal-content max-w-2xl w-full mx-4 rounded-2xl overflow-hidden shadow-2xl flex flex-col"
+        className="modal-content w-[94vw] max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl flex flex-col"
         style={{
           background: bgCard,
           border: `2px solid ${border}`,
-          maxHeight: '90vh',
+          maxHeight: '88vh',
         }}
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
         <div
-          className="p-5 flex justify-between items-center shrink-0"
+          className="p-4 sm:p-5 flex justify-between items-center shrink-0"
           style={{ borderBottom: `1px solid ${border}`, background: isDark ? '#241132' : '#F5FAF6' }}
         >
-          <div>
+          <div className="min-w-0 pr-2">
             <span
-              className="text-xs font-mono font-semibold uppercase"
+              className="text-[11px] sm:text-xs font-mono font-semibold uppercase tracking-wider"
               style={{ color: accent }}
             >
               {project.categoryLabel}
             </span>
             <h3
-              className="text-xl font-bold mt-1"
+              className="text-lg sm:text-xl font-bold mt-0.5 truncate"
               style={{ fontFamily: 'Space Grotesk, sans-serif', color: textMain }}
             >
               {project.title}
@@ -64,7 +64,7 @@ export default function ProjectModal({ project, onClose }) {
           <button
             onClick={onClose}
             aria-label="Close"
-            className="w-9 h-9 rounded-xl flex items-center justify-center transition hover:scale-110"
+            className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition hover:scale-110"
             style={{ background: isDark ? '#100718' : '#E7F3E9', color: textSec }}
           >
             <i className="fa-solid fa-xmark"></i>
@@ -72,7 +72,7 @@ export default function ProjectModal({ project, onClose }) {
         </div>
 
         {/* Body – scrollable */}
-        <div className="p-6 overflow-y-auto space-y-5 text-sm flex-1">
+        <div className="p-4 sm:p-6 overflow-y-auto space-y-4 sm:space-y-5 text-sm flex-1">
           {/* Highlight pill */}
           <div
             className="p-3 rounded-xl text-xs font-semibold"

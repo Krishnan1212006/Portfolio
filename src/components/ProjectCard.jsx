@@ -30,7 +30,7 @@ export default function ProjectCard({ project, onOpenDetails }) {
     >
       {/* Banner */}
       <div
-        className="h-40 relative flex flex-col justify-between p-5 overflow-hidden"
+        className="h-36 sm:h-40 relative flex flex-col justify-between p-4 sm:p-5 overflow-hidden"
         style={{ background: isDark ? 'linear-gradient(135deg, #1B0B29 0%, #241132 100%)' : 'linear-gradient(135deg, #E7F3E9 0%, #F5FAF6 100%)' }}
       >
         <div
@@ -40,26 +40,26 @@ export default function ProjectCard({ project, onOpenDetails }) {
 
         <div className="flex items-center justify-between z-10">
           <span
-            className="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold uppercase"
+            className="px-2.5 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-mono font-bold uppercase"
             style={{ background: cc.bg, color: cc.text, border: `1px solid ${cc.border}` }}
           >
             {project.categoryLabel}
           </span>
-          <span className="text-xs font-mono" style={{ color: textSec }}>{project.year}</span>
+          <span className="text-[11px] sm:text-xs font-mono" style={{ color: textSec }}>{project.year}</span>
         </div>
 
         <div className="z-10 flex items-center gap-3">
           <div
-            className="w-11 h-11 rounded-xl flex items-center justify-center text-xl"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center text-lg sm:text-xl shrink-0"
             style={{ background: isDark ? 'rgba(212,175,55,0.15)' : 'rgba(22,131,74,0.12)', color: accent }}
           >
             <i className={`fa-solid ${project.icon}`}></i>
           </div>
-          <div>
-            <div className="text-[11px] font-mono font-semibold uppercase opacity-80" style={{ color: textSec }}>
+          <div className="min-w-0">
+            <div className="text-[10px] sm:text-[11px] font-mono font-semibold uppercase opacity-80 truncate" style={{ color: textSec }}>
               {project.subtitle}
             </div>
-            <div className="text-base font-bold leading-tight" style={{ color: textMain, fontFamily: 'Space Grotesk, sans-serif' }}>
+            <div className="text-base font-bold leading-tight truncate" style={{ color: textMain, fontFamily: 'Space Grotesk, sans-serif' }}>
               {project.title}
             </div>
           </div>
@@ -67,32 +67,32 @@ export default function ProjectCard({ project, onOpenDetails }) {
       </div>
 
       {/* Content */}
-      <div className="p-5 space-y-3 flex-1">
+      <div className="p-4 sm:p-5 space-y-3 flex-1">
         <div
-          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold"
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] sm:text-xs font-semibold leading-normal"
           style={{ background: isDark ? 'rgba(212,175,55,0.1)' : 'rgba(22,131,74,0.08)', color: accent, border: `1px solid ${accent}25` }}
         >
-          <i className="fa-solid fa-bolt text-[10px]"></i>
-          <span>{project.highlight}</span>
+          <i className="fa-solid fa-bolt text-[10px] shrink-0"></i>
+          <span className="break-words">{project.highlight}</span>
         </div>
 
-        <p className="text-sm leading-relaxed" style={{ color: textSec }}>
+        <p className="text-xs sm:text-sm leading-relaxed" style={{ color: textSec }}>
           {project.shortDesc}
         </p>
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-1.5">
-          {project.techs.slice(0, 6).map((tech, i) => (
+          {project.techs.slice(0, 5).map((tech, i) => (
             <span
               key={i}
-              className="skill-badge px-2 py-0.5 rounded text-xs"
+              className="skill-badge px-2 py-0.5 rounded text-[11px] sm:text-xs"
             >
               {tech}
             </span>
           ))}
-          {project.techs.length > 6 && (
-            <span className="px-2 py-0.5 rounded text-xs" style={{ color: accent, fontFamily: 'JetBrains Mono, monospace' }}>
-              +{project.techs.length - 6} more
+          {project.techs.length > 5 && (
+            <span className="px-2 py-0.5 rounded text-[11px] sm:text-xs" style={{ color: accent, fontFamily: 'JetBrains Mono, monospace' }}>
+              +{project.techs.length - 5}
             </span>
           )}
         </div>
@@ -100,12 +100,12 @@ export default function ProjectCard({ project, onOpenDetails }) {
 
       {/* Footer Actions */}
       <div
-        className="p-4 flex items-center gap-2"
+        className="p-3.5 sm:p-4 flex items-center gap-2"
         style={{ borderTop: `1px solid ${borderCard}` }}
       >
         <button
           onClick={() => onOpenDetails(project)}
-          className="flex-1 py-2 px-3 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-1.5"
+          className="flex-1 py-2 px-3 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-1.5 shadow-sm"
           style={{ background: bgStat, color: textMain, border: `1px solid ${borderCard}` }}
           onMouseEnter={e => { e.currentTarget.style.borderColor = accent; e.currentTarget.style.color = accent; }}
           onMouseLeave={e => { e.currentTarget.style.borderColor = borderCard; e.currentTarget.style.color = textMain; }}
@@ -119,7 +119,7 @@ export default function ProjectCard({ project, onOpenDetails }) {
           target="_blank"
           rel="noopener noreferrer"
           title="View on GitHub"
-          className="py-2 px-3 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-1.5"
+          className="py-2 px-3.5 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-1.5 shrink-0"
           style={{ background: isDark ? '#100718' : '#F5FAF6', color: accent, border: `1px solid ${accent}30` }}
           onMouseEnter={e => { e.currentTarget.style.borderColor = accent; }}
           onMouseLeave={e => { e.currentTarget.style.borderColor = `${accent}30`; }}

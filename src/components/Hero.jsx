@@ -20,12 +20,12 @@ export default function Hero() {
     <>
       {showModal && <ProfileImageModal onClose={() => setShowModal(false)} />}
 
-      <section id="home" className="relative pt-10 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
+      <section id="home" className="relative pt-6 pb-14 sm:pt-10 sm:pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* ── Availability Badge ── */}
           <div
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-8"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium mb-6 sm:mb-8 max-w-full leading-relaxed"
             style={{
               background: isDark ? 'rgba(84,36,119,0.3)' : 'rgba(22,131,74,0.1)',
               border: `1px solid ${accent}40`,
@@ -33,17 +33,17 @@ export default function Hero() {
               fontFamily: 'JetBrains Mono, monospace',
             }}
           >
-            <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#22c55e' }}></span>
-            <span>Available for Cybersecurity, IoT &amp; Software Engineering Opportunities</span>
+            <span className="w-2 h-2 rounded-full animate-pulse shrink-0" style={{ background: '#22c55e' }}></span>
+            <span className="break-words">Available for Cybersecurity, IoT &amp; Software Engineering Opportunities</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
             {/* ════ LEFT CONTENT ════ */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
 
               <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight"
+                className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.18] sm:leading-tight"
                 style={{ fontFamily: 'Space Grotesk, sans-serif', color: textMain }}
               >
                 Building Intelligent Systems.{' '}
@@ -62,7 +62,7 @@ export default function Hero() {
                 </span>
               </h1>
 
-              <p className="text-lg text-base leading-relaxed max-w-2xl" style={{ color: textSec }}>
+              <p className="text-sm sm:text-base leading-relaxed max-w-2xl" style={{ color: textSec }}>
                 Hi, I'm{' '}
                 <strong style={{ color: textMain, fontWeight: 700 }}>Hari Krishnan.S</strong>
                 , a Computer Science and Engineering student (CGPA:{' '}
@@ -74,17 +74,17 @@ export default function Hero() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2 w-full sm:w-auto">
                 <a
                   href="#projects"
-                  className="btn-primary inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm"
+                  className="btn-primary inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold shadow-md"
                 >
                   <i className="fa-solid fa-diagram-project text-sm"></i>
                   <span>Explore My Projects</span>
                 </a>
                 <a
                   href="#contact"
-                  className="btn-secondary inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm"
+                  className="btn-secondary inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold"
                 >
                   <i className="fa-solid fa-paper-plane text-sm" style={{ color: accent }}></i>
                   <span>Get in Touch</span>
@@ -94,7 +94,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   download="HariKrishnan_Resume.pdf"
-                  className="btn-secondary inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm"
+                  className="btn-secondary inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold"
                 >
                   <i className="fa-solid fa-cloud-arrow-down text-sm" style={{ color: accent }}></i>
                   <span>Download Resume</span>
@@ -103,12 +103,12 @@ export default function Hero() {
 
               {/* Quick Contact Bar */}
               <div
-                className="pt-5 flex flex-wrap items-center gap-5 text-sm border-t"
+                className="pt-4 sm:pt-5 flex flex-wrap items-center gap-3 sm:gap-5 text-xs sm:text-sm border-t"
                 style={{ borderColor: `${accent}25`, color: textSec }}
               >
                 <a
                   href={`mailto:${profileData.email}`}
-                  className="flex items-center gap-2 transition-colors hover:no-underline"
+                  className="flex items-center gap-1.5 transition-colors hover:no-underline"
                   style={{ color: textSec }}
                   onMouseEnter={e => e.currentTarget.style.color = accent}
                   onMouseLeave={e => e.currentTarget.style.color = textSec}
@@ -119,7 +119,7 @@ export default function Hero() {
                 </a>
                 <a
                   href={`tel:${profileData.phone.replace(/\s+/g, '')}`}
-                  className="flex items-center gap-2 transition-colors"
+                  className="flex items-center gap-1.5 transition-colors"
                   style={{ color: textSec, fontFamily: 'JetBrains Mono, monospace' }}
                   onMouseEnter={e => e.currentTarget.style.color = accent}
                   onMouseLeave={e => e.currentTarget.style.color = textSec}
@@ -131,7 +131,7 @@ export default function Hero() {
                   href={profileData.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 transition-colors"
+                  className="flex items-center gap-1.5 transition-colors"
                   style={{ color: textSec }}
                   onMouseEnter={e => e.currentTarget.style.color = accent}
                   onMouseLeave={e => e.currentTarget.style.color = textSec}
@@ -143,7 +143,7 @@ export default function Hero() {
                   href={profileData.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 transition-colors"
+                  className="flex items-center gap-1.5 transition-colors"
                   style={{ color: textSec }}
                   onMouseEnter={e => e.currentTarget.style.color = accent}
                   onMouseLeave={e => e.currentTarget.style.color = textSec}
@@ -151,7 +151,7 @@ export default function Hero() {
                   <i className="fa-brands fa-linkedin" style={{ color: accent }}></i>
                   <span>LinkedIn</span>
                 </a>
-                <span className="flex items-center gap-2" style={{ color: textSec }}>
+                <span className="flex items-center gap-1.5" style={{ color: textSec }}>
                   <i className="fa-solid fa-location-dot" style={{ color: isDark ? '#a855f7' : '#16834A' }}></i>
                   <span>{profileData.location}</span>
                 </span>
@@ -161,7 +161,7 @@ export default function Hero() {
             {/* ════ RIGHT PROFILE CARD ════ */}
             <div className="lg:col-span-5" id="about">
               <div
-                className="themed-card rounded-3xl p-6 sm:p-8 space-y-5 relative overflow-hidden"
+                className="themed-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 space-y-4 sm:space-y-5 relative overflow-hidden"
                 style={{ background: bgCard, border: `1px solid ${borderCard}` }}
               >
                 {/* Background glow */}
@@ -171,13 +171,13 @@ export default function Hero() {
                 />
 
                 {/* Profile Image + Info */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3.5 sm:gap-4">
                   {/* Animated circular photo */}
                   <div
                     className="relative shrink-0 cursor-pointer"
                     onClick={() => setShowModal(true)}
                     title="Click to view HD photo"
-                    style={{ width: 88, height: 88 }}
+                    style={{ width: 76, height: 76 }}
                   >
                     {/* Animated border ring */}
                     <div
@@ -214,7 +214,7 @@ export default function Hero() {
                         />
                       ) : (
                         <div
-                          className="w-full h-full flex items-center justify-center text-2xl font-bold"
+                          className="w-full h-full flex items-center justify-center text-xl font-bold"
                           style={{ color: accent, background: bgStat }}
                         >
                           HK
@@ -225,56 +225,57 @@ export default function Hero() {
 
                   {/* Name + details */}
                   <div className="flex-1 min-w-0">
-                    <h3
-                      className="text-xl font-bold tracking-wide"
-                      style={{ fontFamily: 'Space Grotesk, sans-serif', color: textMain }}
-                    >
-                      Hari Krishnan.S
-                    </h3>
-                    <p className="text-xs font-mono mt-0.5" style={{ color: accent }}>
+                    <div className="flex items-center justify-between gap-1">
+                      <h3
+                        className="text-lg sm:text-xl font-bold tracking-wide truncate"
+                        style={{ fontFamily: 'Space Grotesk, sans-serif', color: textMain }}
+                      >
+                        Hari Krishnan.S
+                      </h3>
+                      {/* Verified badge */}
+                      <span
+                        className="shrink-0 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold"
+                        style={{
+                          background: isDark ? 'rgba(34,197,94,0.1)' : 'rgba(22,131,74,0.1)',
+                          color: '#22c55e',
+                          border: '1px solid rgba(34,197,94,0.3)',
+                        }}
+                      >
+                        Verified
+                      </span>
+                    </div>
+                    <p className="text-xs font-mono mt-0.5 truncate" style={{ color: accent }}>
                       Cybersecurity &amp; Embedded IoT
                     </p>
-                    <p className="text-xs mt-0.5" style={{ color: textSec }}>
+                    <p className="text-[11px] sm:text-xs mt-0.5" style={{ color: textSec }}>
                       B.E. CSE • 7.27 CGPA • 2023–2027
                     </p>
                   </div>
-
-                  {/* Verified badge */}
-                  <span
-                    className="shrink-0 px-2.5 py-1 rounded-full text-xs font-semibold"
-                    style={{
-                      background: isDark ? 'rgba(34,197,94,0.1)' : 'rgba(22,131,74,0.1)',
-                      color: '#22c55e',
-                      border: '1px solid rgba(34,197,94,0.3)',
-                    }}
-                  >
-                    Verified
-                  </span>
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   {[
                     { val: `${projectsData.length}`, label: 'Featured Projects', sub: 'AI, IoT, Security, UI' },
-                    { val: '4× 1st Prize', label: 'Competition Awards', sub: 'Dream 2 Reality & Tech Day' },
-                    { val: '3× Intern', label: 'Hackup Technology', sub: 'Ethical Hacking & IoT' },
+                    { val: '4× 1st Prize', label: 'Awards & Honors', sub: 'Dream 2 Reality & Tech Day' },
+                    { val: '3× Intern', label: 'Hackup Tech', sub: 'Ethical Hacking & IoT' },
                     { val: 'NIST 800-88', label: 'Compliant Tooling', sub: 'Cryptographic Wiping' },
                   ].map((stat, i) => (
                     <div
                       key={i}
-                      className="p-3.5 rounded-xl"
+                      className="p-3 sm:p-3.5 rounded-xl transition"
                       style={{ background: bgStat, border: `1px solid ${borderCard}` }}
                     >
                       <div
-                        className="text-lg font-black"
+                        className="text-base sm:text-lg font-black leading-tight"
                         style={{ color: accent, fontFamily: 'Space Grotesk, sans-serif' }}
                       >
                         {stat.val}
                       </div>
-                      <div className="text-xs font-medium mt-0.5" style={{ color: textMain }}>
+                      <div className="text-[11px] sm:text-xs font-medium mt-0.5 leading-tight" style={{ color: textMain }}>
                         {stat.label}
                       </div>
-                      <div className="text-[11px] mt-0.5" style={{ color: textSec }}>
+                      <div className="text-[10px] sm:text-[11px] mt-0.5 leading-tight truncate" style={{ color: textSec }}>
                         {stat.sub}
                       </div>
                     </div>
@@ -284,7 +285,7 @@ export default function Hero() {
                 {/* VIEW HD PHOTO button */}
                 <button
                   onClick={() => setShowModal(true)}
-                  className="w-full py-2.5 rounded-xl text-xs font-mono font-semibold tracking-widest transition-all"
+                  className="w-full py-2.5 rounded-xl text-xs font-mono font-bold tracking-wider transition-all"
                   style={{
                     background: isDark ? 'rgba(212,175,55,0.08)' : 'rgba(22,131,74,0.08)',
                     color: accent,
@@ -293,13 +294,13 @@ export default function Hero() {
                   onMouseEnter={e => { e.currentTarget.style.background = accent; e.currentTarget.style.color = isDark ? '#100718' : '#FFFFFF'; }}
                   onMouseLeave={e => { e.currentTarget.style.background = isDark ? 'rgba(212,175,55,0.08)' : 'rgba(22,131,74,0.08)'; e.currentTarget.style.color = accent; }}
                 >
-                  <i className="fa-solid fa-image mr-2"></i>
+                  <i className="fa-solid fa-image mr-1.5"></i>
                   VIEW HD PHOTO
                 </button>
 
                 {/* Bio quote */}
                 <div
-                  className="p-3.5 rounded-xl text-xs sm:text-sm leading-relaxed italic"
+                  className="p-3 sm:p-3.5 rounded-xl text-xs sm:text-sm leading-relaxed italic"
                   style={{
                     background: isDark ? 'rgba(16,7,24,0.6)' : '#F5FAF6',
                     borderLeft: `3px solid ${accent}`,

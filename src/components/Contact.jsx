@@ -52,7 +52,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 relative"
+      className="py-14 sm:py-20 relative"
       style={{ borderTop: `1px solid ${accent}15` }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,7 +75,7 @@ export default function Contact() {
 
             {/* Resume card */}
             <div
-              className="themed-card rounded-2xl p-4 flex items-center justify-between gap-3"
+              className="themed-card rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
               style={{ background: bgCard, border: `1px solid ${border}` }}
             >
               <div className="flex items-center gap-3">

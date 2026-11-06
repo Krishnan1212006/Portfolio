@@ -387,6 +387,30 @@ section, header, footer {
   z-index: 1;
 }
 
+/* ===================== NO-SCROLLBAR UTILITY ===================== */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ===================== MOBILE TOUCH IMPROVEMENTS ===================== */
+.modal-backdrop {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* iOS Safari: prevent input zoom (font-size must be >=16px) */
+input, textarea, select {
+  font-size: 16px !important;
+}
+@media (min-width: 640px) {
+  input, textarea, select {
+    font-size: 0.875rem !important; /* restore text-sm on larger screens */
+  }
+}
+
+/* Ensure tap targets are large enough */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* ===================== REDUCED MOTION ===================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

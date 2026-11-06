@@ -95,16 +95,16 @@ export default function Navbar() {
                 )}
               </div>
             </div>
-            <div className="hidden sm:block">
-              <div
-                className="font-heading font-bold text-sm tracking-widest transition-colors"
+            <div className="flex flex-col">
+              <span
+                className="font-heading font-bold text-xs sm:text-sm tracking-wider sm:tracking-widest transition-colors leading-tight"
                 style={{ color: textMain, fontFamily: 'Space Grotesk, sans-serif' }}
               >
                 HARI KRISHNAN.S
-              </div>
-              <div className="text-xs font-mono" style={{ color: textSec }}>
+              </span>
+              <span className="text-[10px] sm:text-xs font-mono leading-tight mt-0.5" style={{ color: textSec }}>
                 CYBERSECURITY &amp; EMBEDDED IoT
-              </div>
+              </span>
             </div>
           </a>
 
@@ -191,38 +191,66 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* ── Mobile Hamburger ── */}
-          <button
-            className="xl:hidden p-2 rounded-lg transition"
-            onClick={() => setMobileOpen(v => !v)}
-            aria-label="Toggle navigation"
-            style={{ color: textSec }}
-          >
-            <i className={`fa-solid ${mobileOpen ? 'fa-xmark' : 'fa-bars'} text-xl`}></i>
-          </button>
+          {/* ── Mobile Actions (Theme Toggle + Hamburger) ── */}
+          <div className="flex xl:hidden items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="w-9 h-9 rounded-xl flex items-center justify-center transition-all"
+              style={{
+                background: isDark ? 'rgba(212,175,55,0.15)' : 'rgba(22,131,74,0.12)',
+                color: accent,
+                border: `1px solid ${accent}40`,
+              }}
+            >
+              <i className={`fa-solid ${isDark ? 'fa-moon' : 'fa-sun'} text-sm`}></i>
+            </button>
+            <button
+              className="w-9 h-9 rounded-xl flex items-center justify-center transition"
+              onClick={() => setMobileOpen(v => !v)}
+              aria-label="Toggle navigation"
+              style={{
+                color: textSec,
+                background: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
+                border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`
+              }}
+            >
+              <i className={`fa-solid ${mobileOpen ? 'fa-xmark' : 'fa-bars'} text-lg`}></i>
+            </button>
+          </div>
         </div>
       </div>
 
       {/* ── Mobile Drawer ── */}
       {mobileOpen && (
-        <div className="mobile-nav-drawer xl:hidden px-4 pt-3 pb-6 space-y-1">
-          {NAV_LINKS.map(link => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
-              style={{ color: textSec, fontFamily: 'Inter, sans-serif' }}
-              onMouseEnter={e => e.currentTarget.style.color = accent}
-              onMouseLeave={e => e.currentTarget.style.color = textSec}
-            >
-              {link.label}
-            </a>
-          ))}
+        <div
+          className="mobile-nav-drawer xl:hidden px-4 pt-3 pb-6 space-y-1 shadow-2xl animate-in slide-in-from-top-2 duration-200"
+          style={{ maxHeight: 'calc(100vh - 76px)', overflowY: 'auto' }}
+        >
+          {NAV_LINKS.map(link => {
+            const sectionId = link.href.replace('#', '');
+            const isActive  = activeSection === sectionId;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-colors"
+                style={{
+                  color: isActive ? accent : textSec,
+                  background: isActive ? (isDark ? 'rgba(212,175,55,0.08)' : 'rgba(22,131,74,0.08)') : 'transparent',
+                  fontFamily: 'Inter, sans-serif'
+                }}
+              >
+                <span>{link.label}</span>
+                {isActive && <span className="w-1.5 h-1.5 rounded-full" style={{ background: accent }}></span>}
+              </a>
+            );
+          })}
           <div className="pt-3 flex flex-col gap-2">
             <button
               onClick={() => { toggleTheme(); setMobileOpen(false); }}
-              className="w-full py-2.5 rounded-lg text-sm font-mono font-bold flex items-center justify-center gap-2"
+              className="w-full py-2.5 rounded-xl text-sm font-mono font-bold flex items-center justify-center gap-2 transition"
               style={{
                 background: isDark ? 'rgba(212,175,55,0.15)' : 'rgba(22,131,74,0.12)',
                 color: accent,
@@ -247,16 +275,16 @@ export default function Navbar() {
               rel="noopener noreferrer"
               download="HariKrishnan_Resume.pdf"
               onClick={() => setMobileOpen(false)}
-              className="w-full text-center py-2.5 rounded-lg text-sm font-semibold"
+              className="w-full text-center py-2.5 rounded-xl text-sm font-semibold transition"
               style={{ background: isDark ? '#241132' : '#F5FAF6', color: textSec, border: `1px solid ${accent}30` }}
             >
-              <i className="fa-solid fa-download mr-2" style={{ color: accent }}></i>
-              Download Resume
+              <i className="fa-solid fa-file-pdf mr-2" style={{ color: accent }}></i>
+              Download Resume (PDF)
             </a>
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="btn-primary w-full text-center py-2.5 rounded-lg text-sm font-bold"
+              className="btn-primary w-full text-center py-2.5 rounded-xl text-sm font-bold shadow-md"
             >
               Get in Touch
             </a>

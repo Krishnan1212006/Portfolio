@@ -37,19 +37,19 @@ export default function ProjectGrid({ onOpenDetails }) {
   }, [activeCategory, searchQuery]);
 
   return (
-    <section id="projects" className="py-16 relative" style={{ borderTop: `1px solid ${accent}20` }}>
+    <section id="projects" className="py-12 sm:py-16 relative" style={{ borderTop: `1px solid ${accent}20` }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 gap-4">
           <div>
-            <div className="section-label inline-flex items-center gap-2 mb-2">
+            <div className="section-label inline-flex items-center gap-2 mb-1.5 sm:mb-2 text-xs">
               <i className="fa-solid fa-layer-group"></i> Portfolio Showcase
             </div>
-            <h2 className="section-title text-3xl sm:text-4xl font-extrabold tracking-tight">
+            <h2 className="section-title text-2xl sm:text-4xl font-extrabold tracking-tight">
               Featured Projects &amp; Engineering Work
             </h2>
-            <p className="text-sm sm:text-base mt-1 max-w-2xl" style={{ color: textSec }}>
+            <p className="text-xs sm:text-base mt-1 max-w-2xl" style={{ color: textSec }}>
               Real-world systems spanning AI threat intelligence, certified storage sanitization, embedded satellite telemetry, and IoT hardware.
             </p>
           </div>
@@ -60,16 +60,16 @@ export default function ProjectGrid({ onOpenDetails }) {
               type="text"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Filter by Python, NIST, IoT, AI…"
-              className="form-input w-full rounded-xl px-4 py-2.5 pl-10 text-sm"
+              placeholder="Search Python, NIST, IoT, AI…"
+              className="form-input w-full rounded-xl px-4 py-2.5 pl-10 text-base sm:text-sm"
               style={{ borderRadius: '0.75rem' }}
             />
             <i className="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-sm" style={{ color: textSec }}></i>
           </div>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 pb-4" style={{ borderBottom: `1px solid ${accent}15` }}>
+        {/* Category Filter Pills (swipeable on mobile) */}
+        <div className="flex items-center gap-2 mb-8 sm:mb-10 pb-3 overflow-x-auto no-scrollbar sm:flex-wrap" style={{ borderBottom: `1px solid ${accent}15` }}>
           {FILTERS.map(f => {
             const count = f.key === 'all'
               ? projectsData.length
@@ -78,7 +78,7 @@ export default function ProjectGrid({ onOpenDetails }) {
               <button
                 key={f.key}
                 onClick={() => setActiveCategory(f.key)}
-                className="filter-pill px-4 py-2 rounded-xl text-xs sm:text-sm"
+                className="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm whitespace-nowrap shrink-0 transition"
                 style={{
                   background: activeCategory === f.key ? accent : bgCard,
                   color: activeCategory === f.key ? (isDark ? '#100718' : '#FFFFFF') : textSec,
