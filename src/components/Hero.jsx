@@ -49,13 +49,15 @@ export default function Hero() {
                 Building Intelligent Systems.{' '}
                 <br />
                 <span
+                  className="inline-block"
                   style={{
                     background: isDark
-                      ? 'linear-gradient(135deg, #D4AF37, #F4D477, #D4AF37)'
-                      : 'linear-gradient(135deg, #16834A, #20A56B, #0D3925)',
+                      ? 'linear-gradient(135deg, #D4AF37 0%, #F4D477 50%, #D4AF37 100%)'
+                      : 'linear-gradient(135deg, #16834A 0%, #20A56B 50%, #0D3925 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
+                    color: 'transparent',
                   }}
                 >
                   Securing the Digital Future.
